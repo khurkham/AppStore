@@ -1,0 +1,115 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:fitsSystemWindows="true"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              xmlns:tools="http://schemas.android.com/tools"
+              tools:context="org.buildmlearn.appstore.com.buildmlearn.appstore.activities.FlashActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar_flashcards"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/primary"
+        android:elevation="7dp"
+        android:paddingTop="@dimen/tool_bar_top_padding" />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context=".FlashActivity" >
+
+    <TextView
+        android:id="@+id/flashCardNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/primary_dark"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/flashCardNumber"
+        android:background="@color/divider" />
+
+    <LinearLayout
+        android:id="@+id/ll_btnlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/pre_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/previous"
+            android:background="@color/primary"
+            android:textColor="@android:color/white"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:id="@+id/flip_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/flip"
+            android:background="@color/primary"
+            android:textColor="@android:color/white"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/next"
+            android:background="@color/primary"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="@dimen/card_width"
+        android:layout_height="@dimen/card_width"
+        android:layout_centerInParent="true"
+        android:padding="0dp" >
+
+        <include
+            android:id="@+id/questionInMain"
+            layout="@layout/question"/>
+
+        <include
+            android:id="@+id/answerInMain"
+            layout="@layout/answer"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/flashCardText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/primary_text"
+        android:textSize="16sp" />
+
+</RelativeLayout>
+    </LinearLayout>
